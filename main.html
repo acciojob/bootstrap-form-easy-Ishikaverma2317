@@ -12,17 +12,29 @@
     }
     .container {
       max-width: 600px;
-      margin-top: 50px;
+      margin-top: 60px;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h3 {
+      color: #0d6efd;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .form-label {
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h2 class="text-center mb-4 text-primary">Internship Application Form</h2>
+    <h3>Internship Application Form</h3>
 
     <form class="needs-validation" novalidate>
-
+      
       <!-- First Name -->
       <div class="mb-3">
         <label for="first-name-input" class="form-label">First Name</label>
@@ -59,7 +71,7 @@
         </div>
       </div>
 
-      <!-- Roll Number -->
+      <!-- Roll No -->
       <div class="mb-3">
         <label for="roll-no-input" class="form-label">Roll Number</label>
         <input type="text" class="form-control" id="roll-no-input" required>
@@ -72,7 +84,7 @@
       <div class="mb-3">
         <label for="grad-year" class="form-label">Graduation Year</label>
         <select class="form-select" id="grad-year" required>
-          <option value="">Choose...</option>
+          <option value="">Select Year</option>
           <option value="2020">2020</option>
           <option value="2021">2021</option>
           <option value="2022">2022</option>
@@ -83,11 +95,11 @@
         </div>
       </div>
 
-      <!-- Conditions Checkbox -->
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="conditions-checkbox" required>
+      <!-- Terms and Conditions -->
+      <div class="form-check mb-4">
+        <input class="form-check-input" type="checkbox" value="" id="conditions-checkbox" required>
         <label class="form-check-label" for="conditions-checkbox">
-          I agree to all the terms and conditions.
+          Agree to terms and conditions
         </label>
         <div class="invalid-feedback">
           You must agree before submitting.
@@ -95,7 +107,9 @@
       </div>
 
       <!-- Submit Button -->
-      <button class="btn btn-primary w-100" type="submit">Submit Application</button>
+      <div class="d-grid">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
     </form>
   </div>
 
@@ -107,15 +121,16 @@
     (function () {
       'use strict'
       var forms = document.querySelectorAll('.needs-validation')
-      Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          form.classList.add('was-validated')
-        }, false)
-      })
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
     })()
   </script>
 
