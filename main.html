@@ -62,7 +62,7 @@
           <div class="invalid-feedback">Please enter your college name.</div>
         </div>
 
-        <!-- Roll No -->
+        <!-- Roll Number -->
         <div class="mb-3">
           <label for="roll-no-input" class="form-label">Roll Number</label>
           <input
@@ -79,15 +79,15 @@
           <label for="graduation-year" class="form-label">Graduation Year</label>
           <select class="form-select" id="graduation-year" required>
             <option value="">Select Year</option>
-            <option>2020</option>
-            <option>2021</option>
-            <option>2022</option>
-            <option>2023</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
           </select>
           <div class="invalid-feedback">Please select your graduation year.</div>
         </div>
 
-        <!-- Checkbox -->
+        <!-- Terms & Conditions -->
         <div class="form-check mb-3">
           <input
             class="form-check-input"
@@ -98,12 +98,10 @@
           <label class="form-check-label" for="conditions-checkbox">
             I agree to the terms and conditions
           </label>
-          <div class="invalid-feedback">
-            You must agree before submitting.
-          </div>
+          <div class="invalid-feedback">You must agree before submitting.</div>
         </div>
 
-        <!-- Submit Button -->
+        <!-- Submit -->
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
@@ -112,9 +110,9 @@
       // Bootstrap validation
       (function () {
         "use strict";
-        var forms = document.querySelectorAll(".needs-validation");
+        const forms = document.querySelectorAll(".needs-validation");
 
-        Array.prototype.slice.call(forms).forEach(function (form) {
+        Array.from(forms).forEach(function (form) {
           form.addEventListener(
             "submit",
             function (event) {
