@@ -1,2 +1,4 @@
-
-/* Your CSS Code here. */
+/* No extra CSS needed, Bootstrap handles layout and validation */
+body {
+  background-color: #f8f9fa;
+}
